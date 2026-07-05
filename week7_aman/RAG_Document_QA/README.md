@@ -1,4 +1,4 @@
-# 📚 AutoInsight — AI-Powered Document QA System
+# Document Question Answering System (RAG)
 
 A beginner-friendly **Retrieval-Augmented Generation (RAG)** application that answers questions based on uploaded PDF documents. The system retrieves the most relevant sections from your document and uses Google Gemini to generate accurate answers.
 
