@@ -219,7 +219,7 @@ if process_button and uploaded_file is not None:
                     saved_hash = f.read().strip()
             
             if saved_hash == file_hash:
-                # The file hasn't changed, load the saved index
+                # The file hasn't changed, try loading the saved index
                 status_text.text("📂 Loading saved index...")
                 progress_bar.progress(75, text="Loading saved index...")
                 
@@ -227,9 +227,38 @@ if process_button and uploaded_file is not None:
                 vector_store = load_vector_store(index_path, embeddings_model)
                 index_time = time.time() - start
                 
-                add_log(
-                    f"Loaded saved FAISS index in {format_time(index_time)}"
-                )
+                if vector_store is not None:
+                    add_log(
+                        f"Loaded saved FAISS index in {format_time(index_time)}"
+                    )
+                else:
+                    add_log(
+                        "Saved index was missing or corrupted. Rebuilding index."
+                    )
+                    status_text.text("🔢 Rebuilding missing index...")
+                    progress_bar.progress(70, text="Building vector index...")
+                    
+                    start = time.time()
+                    vector_store = create_vector_store(
+                        chunk_data["chunks"], embeddings_model
+                    )
+                    embed_time = time.time() - start
+                    
+                    add_log(
+                        f"Created FAISS index with {chunk_data['num_chunks']} "
+                        f"vectors in {format_time(embed_time)}"
+                    )
+                    
+                    status_text.text("💾 Saving index to disk...")
+                    progress_bar.progress(90, text="Saving index...")
+                    
+                    save_vector_store(vector_store, index_path)
+                    
+                    os.makedirs(index_path, exist_ok=True)
+                    with open(hash_file, "w") as f:
+                        f.write(file_hash)
+                    
+                    add_log("Saved FAISS index to disk")
             else:
                 # New file or file changed, create fresh index
                 status_text.text("🔢 Generating embeddings & building index...")
@@ -252,7 +281,6 @@ if process_button and uploaded_file is not None:
                 
                 save_vector_store(vector_store, index_path)
                 
-                # Save the file hash so we know if the file changes
                 os.makedirs(index_path, exist_ok=True)
                 with open(hash_file, "w") as f:
                     f.write(file_hash)

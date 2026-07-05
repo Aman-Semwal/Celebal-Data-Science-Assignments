@@ -75,8 +75,8 @@ def setup_gemini():
     # Configure the Gemini API with our key
     genai.configure(api_key=api_key)
     
-    # Create the model - using gemini-2.5-flash which is widely available on free tier
-    model = genai.GenerativeModel("gemini-2.5-flash")
+    # Create the model - using the canonical model path for the SDK
+    model = genai.GenerativeModel("models/gemini-2.5-flash")
     
     return model
 
