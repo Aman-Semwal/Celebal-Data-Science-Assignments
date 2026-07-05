@@ -1,0 +1,19 @@
+# Environment Variables
+.env
+.env.*
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Data folder (ignore all files and folders in data/ EXCEPT .gitkeep)
+data/*
+!data/.gitkeep
