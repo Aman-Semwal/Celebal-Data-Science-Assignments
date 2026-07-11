@@ -108,7 +108,7 @@ their "ideal" defaults (documented in `src/config/settings.py` and
 on standard multi-core/GPU infrastructure both would benefit from larger configurations.
 
 
-# 🚀 Overview
+## 🚀 Overview
 
 Multi-Series Retail Demand Forecasting for Inventory Optimization is a critical task for inventory optimization, supply chain management, and business planning.
 
@@ -129,7 +129,7 @@ The project follows a modular architecture suitable for research, learning, and 
 
 ---
 
-# ✨ Features
+## Features
 
 - End-to-end ML Pipeline
 - Automated preprocessing
@@ -151,7 +151,7 @@ The project follows a modular architecture suitable for research, learning, and 
 
 ---
 
-# 📂 Project Structure
+## 📂 Project Structure
 
 ```
 Retail-Demand-Forecasting
@@ -182,7 +182,7 @@ Retail-Demand-Forecasting
 
 ---
 
-# 🧠 Machine Learning Pipeline
+## Machine Learning Pipeline
 
 ```
 Raw Data
@@ -220,7 +220,7 @@ Dashboard
 
 ---
 
-# 🛠 Technologies Used
+## 🛠 Technologies Used
 
 ### Programming
 
@@ -266,7 +266,7 @@ Dashboard
 
 ---
 
-# ⚙️ Installation
+## Installation
 
 Clone the repository
 
@@ -310,7 +310,7 @@ pip install -e .
 
 ---
 
-# ▶️ Running the Project
+## ▶️ Running the Project
 
 ## Train Models
 
@@ -356,7 +356,7 @@ Example Output
 
 ---
 
-# 📊 Models Implemented
+## 📊 Models Implemented
 
 | Model | Purpose |
 |--------|----------|
@@ -369,7 +369,7 @@ Example Output
 
 ---
 
-# 📈 Feature Engineering
+## Feature Engineering
 
 The forecasting pipeline includes:
 
@@ -384,7 +384,7 @@ The forecasting pipeline includes:
 
 ---
 
-# 📉 Model Evaluation
+## 📉 Model Evaluation
 
 Evaluation Metrics include:
 
@@ -397,7 +397,7 @@ Segment-wise evaluation is also supported.
 
 ---
 
-# 🔍 Explainable AI
+## Explainable AI
 
 The project includes SHAP Explainability to understand:
 
@@ -407,7 +407,7 @@ The project includes SHAP Explainability to understand:
 
 ---
 
-# 📦 Deployment
+## Deployment
 
 The trained model is served through FastAPI.
 
@@ -421,7 +421,7 @@ Returns predicted retail demand based on input features.
 
 ---
 
-# 📊 Dashboard
+## Dashboard
 
 The Streamlit dashboard provides:
 
@@ -434,7 +434,7 @@ The Streamlit dashboard provides:
 
 ---
 
-# 🧪 Testing
+## 🧪 Testing
 
 Automated tests cover:
 
@@ -454,7 +454,7 @@ Current Status
 
 ---
 
-# 🎯 Future Improvements
+## 🎯 Future Improvements
 
 - Docker Deployment
 - CI/CD Pipeline
