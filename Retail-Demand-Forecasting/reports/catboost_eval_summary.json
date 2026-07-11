@@ -1,0 +1,20 @@
+{
+  "worst_store": {
+    "store": "7",
+    "wape": 12.673155774729992
+  },
+  "best_store": {
+    "store": "2",
+    "wape": 9.537044130931958
+  },
+  "worst_item": {
+    "item": "5",
+    "wape": 18.03739461951973
+  },
+  "best_item": {
+    "item": "15",
+    "wape": 8.311933286819897
+  },
+  "horizon_day_1_wape": 11.424464287110682,
+  "horizon_day_90_wape": 11.57598730324744
+}

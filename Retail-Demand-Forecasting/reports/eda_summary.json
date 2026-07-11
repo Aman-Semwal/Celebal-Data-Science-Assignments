@@ -1,0 +1,13 @@
+{
+  "n_rows": 913000,
+  "n_stores": 10,
+  "n_items": 50,
+  "n_series": 500,
+  "date_min": "2013-01-01",
+  "date_max": "2017-12-31",
+  "sales_mean": 52.250286966046005,
+  "sales_std": 28.801143603517097,
+  "sales_min": 0,
+  "sales_max": 231,
+  "sales_median": 47.0
+}

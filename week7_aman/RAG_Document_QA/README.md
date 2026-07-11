@@ -65,6 +65,36 @@ RAG_Document_QA/
     └── helper.py             # Utility functions
 ```
 
+## 📄 Key Files
+
+- `app.py`
+  - Main Streamlit application and user interface.
+  - Handles file upload, document processing, question input, and answer display.
+
+- `modules/rag_pipeline.py`
+  - RAG orchestration and Google Gemini integration.
+  - Retrieves relevant context, builds prompts, and generates answers.
+
+- `modules/embedding_store.py`
+  - Creates and manages FAISS vector store.
+  - Generates embeddings with HuggingFace and saves/loads the index.
+
+- `modules/pdf_loader.py`
+  - Extracts text from uploaded PDF files using PyPDF2.
+  - Returns page-level text, total characters, and page counts.
+
+- `modules/text_splitter.py`
+  - Splits long document text into smaller overlapping chunks.
+  - Keeps context intact for better retrieval quality.
+
+- `utils/helper.py`
+  - File handling utilities such as saving uploads and hashing files.
+  - Also includes index path helpers and timing helpers.
+
+- `requirements.txt`
+  - Lists Python packages needed to run the app.
+  - Ensures the correct versions for Streamlit, LangChain, FAISS, and Gemini.
+
 ---
 
 ## 🚀 Installation

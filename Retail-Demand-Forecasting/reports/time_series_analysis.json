@@ -1,0 +1,12 @@
+{
+  "aggregate_adf": {
+    "adf_statistic": -3.060244118701342,
+    "p_value": 0.02963864926884404,
+    "is_stationary_at_5pct": true
+  },
+  "example_series_adf": {
+    "adf_statistic": -3.157670556332827,
+    "p_value": 0.022569380626570063,
+    "is_stationary_at_5pct": true
+  }
+}
