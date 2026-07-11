@@ -70,6 +70,15 @@ def add_lag_and_rolling_features(
     )
 
     out = df.sort_values([store_col, item_col, date_col]).reset_index(drop=True).copy()
+    # Defensive: force numeric dtype here regardless of how the caller built `df`.
+    # Assigning pd.NA to create a "future, not-yet-known" scaffold row (as both
+    # src/features/pipeline.py and src/deployment/inference.py do) silently
+    # upcasts a pandas column to `object` dtype on concat -- which then poisons
+    # every lag_*/roll_* feature computed via .shift()/.rolling() below with
+    # object dtype instead of float64, and models like XGBoost reject that
+    # outright. np.nan (a real float) avoids the problem at the source, but we
+    # also coerce here so this can never silently regress.
+    out[target_col] = pd.to_numeric(out[target_col], errors="coerce").astype("float64")
     grouped_sales = out.groupby([store_col, item_col])[target_col]
 
     # The as-of date for a row at position i is (target_date - horizon_days).

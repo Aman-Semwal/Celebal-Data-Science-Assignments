@@ -12,6 +12,7 @@ from __future__ import annotations
 from functools import lru_cache
 
 import joblib
+import numpy as np
 import pandas as pd
 
 from src.config.settings import FORECAST, PATHS
@@ -74,7 +75,7 @@ class InferenceService:
                 FORECAST.date_col: [target_date],
                 FORECAST.store_col: [store],
                 FORECAST.item_col: [item],
-                FORECAST.target_col: [pd.NA],
+                FORECAST.target_col: [np.nan],
             }
         )
         series_history = self.history[
@@ -124,7 +125,7 @@ class InferenceService:
                 FORECAST.date_col: future_dates,
                 FORECAST.store_col: store,
                 FORECAST.item_col: item,
-                FORECAST.target_col: pd.NA,
+                FORECAST.target_col: np.nan,
             }
         )
         series_history = self.history[

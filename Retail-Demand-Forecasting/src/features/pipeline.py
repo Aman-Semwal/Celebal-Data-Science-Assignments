@@ -7,6 +7,7 @@ persists the result plus the resolved feature column list.
 
 from __future__ import annotations
 
+import numpy as np
 import pandas as pd
 
 from src.config.settings import FORECAST, PATHS
@@ -79,7 +80,7 @@ def run_feature_pipeline() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, li
     # that lag/rolling features can be computed with the same function.
     with timer("assembling full history (train + test horizon)"):
         test_scaffold = test_raw[[FORECAST.date_col, FORECAST.store_col, FORECAST.item_col]].copy()
-        test_scaffold[FORECAST.target_col] = pd.NA
+        test_scaffold[FORECAST.target_col] = np.nan
         full_history = (
             pd.concat(
                 [
