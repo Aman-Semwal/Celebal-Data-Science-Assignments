@@ -1,8 +1,17 @@
-# Multi-Series Retail Demand Forecasting for Inventory Optimization
+# 📈 Multi-Series Retail Demand Forecasting for Inventory Optimization
 
 An end-to-end forecasting system that predicts the next **90 days** of demand for every
 **Store × Item** combination in the Kaggle Store Item Demand Forecasting Challenge
 dataset: 5 years of daily sales across **10 stores × 50 items** (913,000 rows, 500 series).
+
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-API-green)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red)
+![MLflow](https://img.shields.io/badge/MLflow-Tracking-blue)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
+---
+
 
 ## Results at a Glance
 
@@ -97,3 +106,373 @@ placeholder. Random Forest and Attention-LSTM hyperparameters were scaled down f
 their "ideal" defaults (documented in `src/config/settings.py` and
 `docs/model_documentation.md`) purely for tractable training time in this environment;
 on standard multi-core/GPU infrastructure both would benefit from larger configurations.
+
+
+# 🚀 Overview
+
+Multi-Series Retail Demand Forecasting for Inventory Optimization is a critical task for inventory optimization, supply chain management, and business planning.
+
+This project provides a complete production-style forecasting pipeline that covers:
+
+- Data ingestion and validation
+- Data preprocessing
+- Advanced feature engineering
+- Multiple machine learning models
+- Hyperparameter tuning
+- Experiment tracking with MLflow
+- Explainable AI using SHAP
+- REST API deployment using FastAPI
+- Interactive dashboard using Streamlit
+- Automated testing using PyTest
+
+The project follows a modular architecture suitable for research, learning, and real-world deployment.
+
+---
+
+# ✨ Features
+
+- End-to-end ML Pipeline
+- Automated preprocessing
+- Calendar-based feature engineering
+- Lag & Rolling Window Features
+- Aggregated Statistical Features
+- Baseline Forecast Models
+- Random Forest
+- XGBoost
+- LightGBM
+- CatBoost
+- Attention-based LSTM
+- Hyperparameter Optimization
+- MLflow Experiment Tracking
+- SHAP Explainability
+- FastAPI Prediction API
+- Interactive Streamlit Dashboard
+- Unit Testing with PyTest
+
+---
+
+# 📂 Project Structure
+
+```
+Retail-Demand-Forecasting
+│
+├── api/                    # FastAPI backend
+├── dashboard/              # Streamlit dashboard
+├── data/                   # Dataset
+├── docs/                   # Documentation
+├── images/                 # Images
+├── models/                 # Saved models
+├── notebooks/              # Jupyter notebooks
+├── reports/                # Reports
+├── src/
+│   ├── config/
+│   ├── data/
+│   ├── deployment/
+│   ├── evaluation/
+│   ├── features/
+│   ├── models/
+│   ├── utils/
+│   └── visualization/
+│
+├── tests/
+├── requirements.txt
+├── pyproject.toml
+└── README.md
+```
+
+---
+
+# 🧠 Machine Learning Pipeline
+
+```
+Raw Data
+     │
+     ▼
+Data Validation
+     │
+     ▼
+Data Preprocessing
+     │
+     ▼
+Feature Engineering
+     │
+     ▼
+Model Training
+     │
+     ▼
+Hyperparameter Tuning
+     │
+     ▼
+Model Evaluation
+     │
+     ▼
+MLflow Tracking
+     │
+     ▼
+SHAP Explainability
+     │
+     ▼
+Prediction API
+     │
+     ▼
+Dashboard
+```
+
+---
+
+# 🛠 Technologies Used
+
+### Programming
+
+- Python 3.12
+
+### Machine Learning
+
+- Scikit-Learn
+- XGBoost
+- LightGBM
+- CatBoost
+- Attention LSTM
+
+### Data Processing
+
+- Pandas
+- NumPy
+
+### Visualization
+
+- Matplotlib
+- Plotly
+
+### Explainable AI
+
+- SHAP
+
+### Backend
+
+- FastAPI
+
+### Frontend
+
+- Streamlit
+
+### Experiment Tracking
+
+- MLflow
+
+### Testing
+
+- PyTest
+
+---
+
+# ⚙️ Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/your-username/Retail-Demand-Forecasting.git
+
+cd Retail-Demand-Forecasting
+```
+
+Create Virtual Environment
+
+```bash
+python -m venv .venv
+```
+
+Activate
+
+### Windows
+
+```bash
+.venv\Scripts\activate
+```
+
+### Linux / Mac
+
+```bash
+source .venv/bin/activate
+```
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Install project
+
+```bash
+pip install -e .
+```
+
+---
+
+# ▶️ Running the Project
+
+## Train Models
+
+```bash
+python -m src.models.train
+```
+
+---
+
+## Run FastAPI
+
+```bash
+uvicorn api.app:app --reload
+```
+
+Open
+
+```
+http://127.0.0.1:8000/docs
+```
+
+---
+
+## Run Dashboard
+
+```bash
+streamlit run dashboard/app.py
+```
+
+---
+
+## Run Tests
+
+```bash
+pytest tests/ -v
+```
+
+Example Output
+
+```
+38 passed
+```
+
+---
+
+# 📊 Models Implemented
+
+| Model | Purpose |
+|--------|----------|
+| Baseline Models | Initial benchmark |
+| Random Forest | Ensemble Learning |
+| XGBoost | Gradient Boosting |
+| LightGBM | Fast Gradient Boosting |
+| CatBoost | Categorical Boosting |
+| Attention LSTM | Deep Learning Forecasting |
+
+---
+
+# 📈 Feature Engineering
+
+The forecasting pipeline includes:
+
+- Calendar Features
+- Holiday Features
+- Lag Features
+- Rolling Mean
+- Rolling Standard Deviation
+- Aggregated Store Features
+- Aggregated Item Features
+- Time-based Features
+
+---
+
+# 📉 Model Evaluation
+
+Evaluation Metrics include:
+
+- RMSE
+- MAE
+- MAPE
+- R² Score
+
+Segment-wise evaluation is also supported.
+
+---
+
+# 🔍 Explainable AI
+
+The project includes SHAP Explainability to understand:
+
+- Feature Importance
+- Global Interpretability
+- Local Prediction Explanation
+
+---
+
+# 📦 Deployment
+
+The trained model is served through FastAPI.
+
+Available endpoint:
+
+```
+POST /predict
+```
+
+Returns predicted retail demand based on input features.
+
+---
+
+# 📊 Dashboard
+
+The Streamlit dashboard provides:
+
+- Dataset Overview
+- Forecast Visualization
+- Feature Analysis
+- Model Comparison
+- Prediction Interface
+- Performance Metrics
+
+---
+
+# 🧪 Testing
+
+Automated tests cover:
+
+- API
+- Feature Engineering
+- Data Validation
+- Metrics
+- Tree Models
+- Baseline Models
+- Data Preprocessing
+
+Current Status
+
+```
+38 Tests Passed ✅
+```
+
+---
+
+# 🎯 Future Improvements
+
+- Docker Deployment
+- CI/CD Pipeline
+- Kubernetes Deployment
+- Real-time Forecasting
+- Multi-store Forecasting
+- Cloud Deployment (AWS/Azure/GCP)
+
+---
+
+# 👨‍💻 Author
+
+**Aman**
+
+GitHub: https://github.com/Aman-Semwal
+
+---
+
+# ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
