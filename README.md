@@ -68,8 +68,13 @@ The repository is organized week-wise, with each folder containing the correspon
 - Semantic search
 - Retrieval-Augmented Generation (RAG)
 - LLM-powered Question Answering system
-
----
+  
+### 📅 Week 8 – Single Agent Systems & Agent Pipelines 
+- Build a Single-Agent Smart Assistant that:
+- Understands user queries
+- Routes tasks based on intent
+- Uses tools when required
+- Returns structured JSON output
 
 ## 🛠️ Technologies & Tools
 
